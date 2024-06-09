@@ -16,7 +16,7 @@ class MailViewRouterDelegate extends RouterDelegate<void>
 
   @override
   Widget build(BuildContext context) {
-    bool handlePopPage(Route<dynamic> route, dynamic result) {
+    bool _handlePopPage(Route<dynamic> route, dynamic result) {
       return false;
     }
 
@@ -25,7 +25,7 @@ class MailViewRouterDelegate extends RouterDelegate<void>
       builder: (context, currentlySelectedInbox, child) {
         return Navigator(
           key: navigatorKey,
-          onPopPage: handlePopPage,
+          onPopPage: _handlePopPage,
           pages: [
             // TODO: Add Fade through transition between mailbox pages (Motion)
             FadeThroughTransitionPageWrapper(
@@ -70,7 +70,7 @@ class MailViewRouterDelegate extends RouterDelegate<void>
     // Handles the back button when on the [ComposePage].
     if (onCompose) {
       // TODO: Add Container Transform from FAB to compose email page (Motion)
-      return SynchronousFuture<bool>(false);
+      return SynchronousFuture<bool>(true);
     }
 
     // Handles the back button when the bottom drawer is visible on the

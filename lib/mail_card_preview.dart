@@ -103,7 +103,7 @@ class MailPreviewCard extends StatelessWidget {
   }
 }
 
-// TODO: Add Container Transform transition from email list to email detail page (Motion) (baru)
+// TODO: Add Container Transform transition from email list to email detail page (Motion)
 class _OpenContainerWrapper extends StatelessWidget {
   const _OpenContainerWrapper({
     required this.id,
@@ -143,8 +143,6 @@ class _OpenContainerWrapper extends StatelessWidget {
     );
   }
 }
-
-// TODO: Add Container Transform transition from email list to email detail page (Motion)
 
 class _DismissibleContainer extends StatelessWidget {
   const _DismissibleContainer({

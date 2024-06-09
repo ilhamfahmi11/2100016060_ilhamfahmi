@@ -2,9 +2,9 @@ import 'package:animations/animations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:reply/custom_transition_page.dart';
 import 'package:reply/home.dart';
 import 'package:reply/search_page.dart';
-
 
 import 'model/router_provider.dart';
 
@@ -49,12 +49,12 @@ class ReplyRouterDelegate extends RouterDelegate<ReplyRoutePath>
             pages: [
               // TODO: Add Shared Z-Axis transition from search icon to search view page (Motion)
               const SharedAxisTransitionPageWrapper(
-                transitionKey: ValueKey('Home'),
+                transitionKey: ValueKey('home'),
                 screen: HomePage(),
               ),
               if (routePath is ReplySearchPath)
                 const SharedAxisTransitionPageWrapper(
-                  transitionKey: ValueKey('Search'),
+                  transitionKey: ValueKey('search'),
                   screen: SearchPage(),
                 ),
             ],
@@ -123,8 +123,6 @@ class SharedAxisTransitionPageWrapper extends Page {
         });
   }
 }
-
-// TODO: Add Shared Z-Axis transition from search icon to search view page (Motion)
 
 class ReplyRouteInformationParser
     extends RouteInformationParser<ReplyRoutePath> {
